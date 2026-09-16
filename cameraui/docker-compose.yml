@@ -1,9 +1,0 @@
-version: '3.7'
-services:
-  server:
-    image: ghcr.io/cameraui/camera.ui:latest
-    restart: on-failure
-    environment:
-      - TZ=Europe/Berlin
-    volumes:
-      - ${APP_DATA_DIR}/data:/data
