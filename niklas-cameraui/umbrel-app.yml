@@ -1,0 +1,15 @@
+manifestVersion: 1
+id: niklas-cameraui
+category: automation
+name: Camera.UI
+version: "2.2.4"
+tagline: Advanced local-first NVR
+description: >-
+  Advanced local-first Network Video Recorder with HomeKit support.
+developer: Niklas
+website: https://cameraui.com
+dependencies: 
+repo: https://github.com/cameraui/camera.ui
+support: https://github.com/cameraui/camera.ui/issues
+port: 8081
+gallery: 
