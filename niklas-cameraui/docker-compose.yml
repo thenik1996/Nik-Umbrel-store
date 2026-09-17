@@ -11,24 +11,14 @@ services:
   app:
     image: ghcr.io/cameraui/camera.ui:latest
     restart: on-failure
+    network_mode: "host"
     environment:
       - TZ=Europe/Berlin
     volumes:
       - ${APP_DATA_DIR}/data:/data
-    ports:
-      # Da Port 2000 auf Umbrel bereits belegt ist (vom Umbrel Router selbst),
-      # wurden die externen Ports hier auf 2010-2014 verschoben!
-      - "2010:2000"
-      - "2011:2001"
-      - "2012:2002"
-      - "2013:2003"
-      - "2014:2004/udp"
-      - "2014:2004/tcp"
-      - "1884:1883"
-
   server:
     # Dieser Hilfs-Container fungiert als "Übersetzer" zwischen Umbrel und Camera.UI.
     # Umbrel spricht nur normales HTTP (über Port 8081), Camera.UI verlangt aber HTTPS (auf Port 3443).
     image: alpine/socat
     restart: on-failure
-    command: tcp-listen:8081,fork,reuseaddr openssl-connect:app:3443,verify=0
+    command: tcp-listen:8081,fork,reuseaddr openssl-connect:192.168.1.2:3443,verify=0
