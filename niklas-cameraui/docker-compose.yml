@@ -9,15 +9,15 @@ services:
     volumes:
       - ${APP_DATA_DIR}/data:/data
     ports:
-      # Hier werden die benötigten Ports für die Kamera-Streams direkt freigegeben,
-      # damit die Kameras aus deinem lokalen Netzwerk darauf zugreifen können.
-      - "2000:2000"
-      - "2001:2001"
-      - "2002:2002"
-      - "2003:2003"
-      - "2004:2004/udp"
-      - "2004:2004/tcp"
-      - "1883:1883"
+      # Da Port 2000 auf Umbrel bereits belegt ist (vom Umbrel Router selbst),
+      # wurden die externen Ports hier auf 2010-2014 verschoben!
+      - "2010:2000"
+      - "2011:2001"
+      - "2012:2002"
+      - "2013:2003"
+      - "2014:2004/udp"
+      - "2014:2004/tcp"
+      - "1884:1883"
 
   server:
     # Dieser Hilfs-Container fungiert als "Übersetzer" zwischen Umbrel und Camera.UI.
