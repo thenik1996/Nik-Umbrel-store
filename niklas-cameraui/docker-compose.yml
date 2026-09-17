@@ -43,6 +43,6 @@ services:
       tailscaled --state=/var/lib/tailscale/tailscaled.state --socket=/var/run/tailscale/tailscaled.sock &
       sleep 5;
       tailscale up --hostname=cameraui --accept-routes;
-      tailscale serve --bg https / https+insecure://host.docker.internal:3443;
+      tailscale serve --bg https+insecure://host.docker.internal:3443;
       wait
       "
