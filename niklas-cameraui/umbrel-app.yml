@@ -2,14 +2,21 @@ manifestVersion: 1
 id: niklas-cameraui
 name: Camera.UI
 tagline: Smart NVR for Home Assistant and HomeKit
-icon: https://raw.githubusercontent.com/cameraui/camera.ui/master/public/icons/favicon.svg
+icon: https://raw.githubusercontent.com/thenik1996/Niklas-Umbrel-store/main/niklas-cameraui/icon.svg
 category: Security
-version: "2.0.0"
+version: "2.0.1"
 port: 8081
 description: >-
   Camera.UI is a complete NVR with smart AI person/vehicle/face detection.
   
   Supports HomeKit Secure Video natively.
+  
+  Features:
+  - Connect your RTSP, RTMP or HTTP cameras.
+  - Smart AI object detection (Person, Vehicle, Face, Animal).
+  - P2P support for cameras like Eufy.
+  - Includes go2rtc for zero-latency WebRTC streams.
+  - Full secure remote access via Tailscale.
 developer: Niklas
 website: https://github.com/cameraui/camera.ui
 submitter: Niklas
