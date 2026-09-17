@@ -1,6 +1,13 @@
 version: '3.7'
 
 services:
+  app_proxy:
+    environment:
+      # Hier sagen wir Umbrel, wo das Webinterface läuft: 
+      # nämlich bei unserem "server" (Übersetzer) auf Port 8081.
+      APP_HOST: niklas-cameraui_server_1
+      APP_PORT: 8081
+
   app:
     image: ghcr.io/cameraui/camera.ui:latest
     restart: on-failure
