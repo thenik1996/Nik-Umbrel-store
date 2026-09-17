@@ -1,9 +1,27 @@
 version: '3.7'
+
 services:
-  server:
+  app:
     image: ghcr.io/cameraui/camera.ui:latest
     restart: on-failure
     environment:
       - TZ=Europe/Berlin
     volumes:
       - ${APP_DATA_DIR}/data:/data
+    ports:
+      # Hier werden die benötigten Ports für die Kamera-Streams direkt freigegeben,
+      # damit die Kameras aus deinem lokalen Netzwerk darauf zugreifen können.
+      - "2000:2000"
+      - "2001:2001"
+      - "2002:2002"
+      - "2003:2003"
+      - "2004:2004/udp"
+      - "2004:2004/tcp"
+      - "1883:1883"
+
+  server:
+    # Dieser Hilfs-Container fungiert als "Übersetzer" zwischen Umbrel und Camera.UI.
+    # Umbrel spricht nur normales HTTP (über Port 8081), Camera.UI verlangt aber HTTPS (auf Port 3443).
+    image: alpine/socat
+    restart: on-failure
+    command: tcp-listen:8081,fork,reuseaddr openssl-connect:app:3443,verify=0

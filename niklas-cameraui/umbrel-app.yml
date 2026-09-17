@@ -1,15 +1,26 @@
 manifestVersion: 1
 id: niklas-cameraui
-category: automation
 name: Camera.UI
-version: "2.2.4"
-tagline: Advanced local-first NVR
-description: >-
-  Advanced local-first Network Video Recorder with HomeKit support.
-developer: Niklas
-website: https://cameraui.com
-dependencies: 
-repo: https://github.com/cameraui/camera.ui
-support: https://github.com/cameraui/camera.ui/issues
+tagline: Smart NVR for Home Assistant and HomeKit
+icon: https://raw.githubusercontent.com/cameraui/camera.ui/master/public/icons/favicon.svg
+category: Security
+version: "2.0.0"
 port: 8081
-gallery: 
+description: >-
+  Camera.UI is a complete NVR with smart AI person/vehicle/face detection.
+  
+  Supports HomeKit Secure Video natively.
+developer: Niklas
+website: https://github.com/cameraui/camera.ui
+submitter: Niklas
+submission: https://github.com/thenik1996/Niklas-Umbrel-store
+repo: https://github.com/thenik1996/Niklas-Umbrel-store
+support: https://github.com/thenik1996/Niklas-Umbrel-store/issues
+gallery:
+  - https://raw.githubusercontent.com/cameraui/camera.ui/master/public/images/screenshot_1.png
+releaseNotes: >-
+  Initial release via Community App Store.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
